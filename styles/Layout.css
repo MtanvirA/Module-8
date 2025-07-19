@@ -1,0 +1,66 @@
+.header, .nav, .main, .footer, .adv, .conc{
+    background-color: forestgreen;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+}
+
+.add, .contact{
+    height: calc(50%-20px);
+    padding: auto;
+}
+
+.header{
+    grid-area: header;
+}
+.main{
+    grid-area: main;
+}
+.nav{
+    grid-area: nav;
+
+}
+.conc{
+    grid-view:conc;
+}
+.adv{
+    grid-view: adv;
+}
+.footer{
+    grid-area: footer;
+}
+
+.container{
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+    "header header header"
+    "nav main conc"
+    "nav main adv"
+    "footer footer footer"
+    ;
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "conc"
+            "adv"
+            "footer"
+        ;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:992px) {
+    .container {
+        grid-template-areas:
+            "header header header"
+            "nav    nav     nav"
+            "conc main  main"
+            "adv footer footer"
+        ;
+    }
+}
